@@ -22,20 +22,27 @@ mv -f kubectl /usr/bin/
 echo "alias k=kubectl" | sudo tee /home/adminuser/.bash_aliases
 
 # docker
-sudo apt-get install ca-certificates curl gnupg lsb-release -y
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+#sudo apt-get install ca-certificates curl gnupg lsb-release -y
+#sudo mkdir -p /etc/apt/keyrings
+#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+#echo \
+#  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+#  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-sudo apt-get update -y
+#sudo apt-get update -y
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+#sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh ./get-docker.sh
 
 # set kubectl, helm bash completion
 echo "source <(helm completion bash)" >> /home/adminuser/.bashrc
 echo "" >> /home/adminuser/.bashrc
 echo "source <(kubectl completion bash)" >> /home/adminuser/.bashrc
 echo "" >> /home/adminuser/.bashrc
+
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh ./get-docker.sh
