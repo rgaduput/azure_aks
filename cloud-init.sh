@@ -18,7 +18,7 @@ curl -sL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 |
 # kubectl
 curl -LO "https://dl.k8s.io/release/v1.23.12/bin/linux/amd64/kubectl"
 chmod +x kubectl
-mv kubectl /usr/bin/
+mv -f kubectl /usr/bin/
 echo "alias k=kubectl" | sudo tee /home/adminuser/.bash_aliases
 
 # docker
