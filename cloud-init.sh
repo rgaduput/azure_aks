@@ -42,6 +42,7 @@ echo "source <(helm completion bash)" >> /home/adminuser/.bashrc
 echo "" >> /home/adminuser/.bashrc
 echo "source <(kubectl completion bash)" >> /home/adminuser/.bashrc
 echo "" >> /home/adminuser/.bashrc
+echo "complete -F __start_kubectl k" >> /home/adminuser/.bashrc
 
 
 #curl -fsSL https://get.docker.com -o get-docker.sh
